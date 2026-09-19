@@ -10,3 +10,5 @@ git push -u origin main
 ->HTML gives structure to the webpage
 ->It contains texts which are known as tag
 ->Tags are understandable by the browsers
+
+heading , paragraph , bold , italic , underline , strong , br , del , mark , 
