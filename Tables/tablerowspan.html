@@ -3,19 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tables</title>
+  <title>Rowspan Example</title>
 </head>
+
 <body>
-  <table>
+
+  <table border="1">
     <tr>
-       <th>Name</th>
-       <th>Age</th>
-       <th>Course</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Course</th>
     </tr>
+
     <tr>
-      <td>Ashutosh</td>
+      <td rowspan="2">Ashutosh</td>
       <td>19</td>
       <td>CSE</td>
+    </tr>
+
+    <tr>
+      <td>20</td>
+      <td>ECE</td>
+    </tr>
+
   </table>
+
 </body>
 </html>
