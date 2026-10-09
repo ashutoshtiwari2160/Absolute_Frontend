@@ -1,0 +1,1803 @@
+/* =========================================================
+   1. CSS RESET / UNIVERSAL SELECTOR
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   2. ROOT / CSS VARIABLES
+   ========================================================= */
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e3a8a;
+    --accent-color: #f97316;
+
+    --success-color: #16a34a;
+    --danger-color: #dc2626;
+
+    --dark-color: #111827;
+    --light-color: #f8fafc;
+
+    --text-color: #1f2937;
+    --muted-color: #64748b;
+
+    --white: #ffffff;
+    --border-color: #d1d5db;
+
+    --container-width: 1100px;
+
+    --small-radius: 5px;
+    --medium-radius: 10px;
+    --large-radius: 20px;
+
+    --transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   3. HTML
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* =========================================================
+   4. BODY
+   ========================================================= */
+
+body {
+    background-color: var(--light-color);
+    color: var(--text-color);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    letter-spacing: 0.2px;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   5. HEADER
+   ========================================================= */
+
+header {
+    background-color: var(--secondary-color);
+
+    background-image:
+        linear-gradient(
+            135deg,
+            #1e3a8a,
+            #2563eb
+        );
+
+    color: var(--white);
+
+    width: 100%;
+
+    min-height: 220px;
+
+    padding: 60px 20px;
+
+    margin: 0;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Header pseudo-element */
+
+header::before {
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    background-color: rgba(255, 255, 255, 0.08);
+
+    border-radius: 50%;
+
+    top: -80px;
+    right: -50px;
+}
+
+
+/* Header heading */
+
+header h1 {
+    color: white;
+
+    font-size: clamp(2rem, 5vw, 3.5rem);
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.3);
+
+    margin-bottom: 10px;
+
+    position: relative;
+}
+
+
+/* Header paragraph */
+
+header p {
+    color: #dbeafe;
+
+    font-size: 1.1rem;
+
+    font-style: italic;
+
+    max-width: 700px;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   6. NAVIGATION
+   ========================================================= */
+
+nav {
+    background-color: var(--dark-color);
+
+    width: 100%;
+
+    padding: 15px 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+nav a {
+    color: white;
+
+    background-color: transparent;
+
+    text-decoration: none;
+
+    text-transform: capitalize;
+
+    font-weight: 600;
+
+    padding: 8px 15px;
+
+    border: 1px solid transparent;
+
+    border-radius: var(--small-radius);
+
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        transform var(--transition),
+        border-color var(--transition);
+}
+
+
+nav a:hover {
+    background-color: var(--primary-color);
+
+    color: white;
+
+    border-color: #60a5fa;
+
+    transform: translateY(-2px);
+}
+
+
+nav a:active {
+    transform: translateY(0);
+
+    background-color: var(--secondary-color);
+}
+
+
+nav a:focus {
+    outline: 3px solid #93c5fd;
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   7. MAIN
+   ========================================================= */
+
+main {
+    width: 90%;
+
+    max-width: var(--container-width);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 20px 0;
+}
+
+
+/* =========================================================
+   8. SECTIONS
+   ========================================================= */
+
+section {
+    background-color: var(--white);
+
+    width: 100%;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    padding: 30px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: var(--medium-radius);
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+
+    position: relative;
+
+    overflow: hidden;
+
+    scroll-margin-top: 80px;
+}
+
+
+/* Section hover */
+
+section:hover {
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   9. HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+
+    margin-bottom: 15px;
+
+    font-weight: 700;
+}
+
+
+section > h2 {
+    color: var(--secondary-color);
+
+    font-size: 2rem;
+
+    text-align: center;
+
+    text-transform: capitalize;
+
+    letter-spacing: 1px;
+
+    padding-bottom: 12px;
+
+    margin-bottom: 25px;
+
+    border-bottom: 3px solid var(--primary-color);
+
+    position: relative;
+}
+
+
+section > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 60px;
+    height: 4px;
+
+    background-color: var(--accent-color);
+
+    margin: 8px auto 0;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   10. PARAGRAPHS
+   ========================================================= */
+
+p {
+    margin-bottom: 15px;
+
+    color: var(--text-color);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   11. TEXT FORMATTING
+   ========================================================= */
+
+strong {
+    color: var(--danger-color);
+
+    font-weight: 700;
+}
+
+
+b {
+    font-weight: 700;
+}
+
+
+em {
+    color: var(--primary-color);
+
+    font-style: italic;
+}
+
+
+i {
+    font-style: italic;
+}
+
+
+u {
+    text-decoration-thickness: 2px;
+
+    text-underline-offset: 3px;
+}
+
+
+mark {
+    background-color: #fef08a;
+
+    color: #713f12;
+
+    padding: 2px 5px;
+
+    border-radius: 3px;
+}
+
+
+small {
+    font-size: 0.8rem;
+
+    color: var(--muted-color);
+}
+
+
+del {
+    color: var(--danger-color);
+
+    text-decoration-thickness: 2px;
+}
+
+
+ins {
+    color: var(--success-color);
+
+    text-decoration-thickness: 2px;
+}
+
+
+s {
+    color: #6b7280;
+}
+
+
+sub,
+sup {
+    font-size: 0.75em;
+}
+
+
+abbr {
+    cursor: help;
+
+    text-decoration: underline dotted;
+
+    text-underline-offset: 3px;
+}
+
+
+/* =========================================================
+   12. QUOTATIONS
+   ========================================================= */
+
+q {
+    color: var(--primary-color);
+
+    font-style: italic;
+
+    quotes: "“" "”";
+}
+
+
+blockquote {
+    background-color: #eff6ff;
+
+    color: #1e40af;
+
+    margin: 20px 0;
+
+    padding: 20px 25px;
+
+    border-left: 5px solid var(--primary-color);
+
+    border-radius: 0 var(--small-radius) var(--small-radius) 0;
+
+    font-size: 1.1rem;
+
+    font-style: italic;
+}
+
+
+cite {
+    color: var(--muted-color);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   13. CODE
+   ========================================================= */
+
+code {
+    background-color: #e5e7eb;
+
+    color: #be123c;
+
+    padding: 3px 7px;
+
+    border-radius: 4px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.9em;
+}
+
+
+pre {
+    background-color: #111827;
+
+    color: #e5e7eb;
+
+    padding: 20px;
+
+    margin: 20px 0;
+
+    border-radius: var(--small-radius);
+
+    border: 1px solid #374151;
+
+    overflow-x: auto;
+
+    white-space: pre;
+
+    tab-size: 4;
+
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+
+kbd {
+    background-color: #1f2937;
+
+    color: white;
+
+    padding: 3px 8px;
+
+    border: 1px solid #6b7280;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 2px 0 #6b7280;
+
+    font-family: monospace;
+}
+
+
+samp {
+    color: var(--success-color);
+
+    font-family: monospace;
+}
+
+
+var {
+    color: #9333ea;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   14. HORIZONTAL RULE
+   ========================================================= */
+
+hr {
+    border: 0;
+
+    border-top: 2px solid #e5e7eb;
+
+    margin: 25px 0;
+}
+
+
+/* =========================================================
+   15. LINKS
+   ========================================================= */
+
+a {
+    color: var(--primary-color);
+
+    text-decoration: underline;
+
+    text-decoration-thickness: 1px;
+
+    text-underline-offset: 3px;
+
+    transition:
+        color var(--transition),
+        background-color var(--transition);
+}
+
+
+a:hover {
+    color: var(--secondary-color);
+
+    text-decoration-thickness: 2px;
+}
+
+
+a:visited {
+    color: #7c3aed;
+}
+
+
+/* =========================================================
+   16. LISTS
+   ========================================================= */
+
+ul,
+ol {
+    margin: 15px 0;
+
+    padding-left: 30px;
+}
+
+
+ul {
+    list-style-type: square;
+}
+
+
+ol {
+    list-style-type: decimal;
+}
+
+
+li {
+    padding: 5px;
+
+    margin-bottom: 5px;
+}
+
+
+li::marker {
+    color: var(--primary-color);
+
+    font-weight: bold;
+}
+
+
+dl {
+    margin: 20px 0;
+}
+
+
+dt {
+    color: var(--secondary-color);
+
+    font-weight: 700;
+
+    margin-top: 15px;
+}
+
+
+dd {
+    color: var(--muted-color);
+
+    margin-left: 30px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   17. IMAGES
+   ========================================================= */
+
+img {
+    display: block;
+
+    max-width: 100%;
+
+    height: auto;
+
+    border-radius: var(--small-radius);
+
+    object-fit: cover;
+}
+
+
+section > img {
+    margin: 20px auto;
+}
+
+
+figure {
+    margin: 25px auto;
+
+    text-align: center;
+
+    max-width: 600px;
+}
+
+
+figure img {
+    width: 100%;
+
+    border: 3px solid #e5e7eb;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+figcaption {
+    color: var(--muted-color);
+
+    font-style: italic;
+
+    margin-top: 10px;
+
+    font-size: 0.9rem;
+}
+
+
+picture {
+    display: block;
+
+    max-width: 600px;
+
+    margin: 20px auto;
+}
+
+
+picture img {
+    width: 100%;
+}
+
+
+/* =========================================================
+   18. TABLE
+   ========================================================= */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    border-spacing: 0;
+
+    margin: 20px 0;
+
+    background-color: white;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border-color);
+}
+
+
+caption {
+    caption-side: top;
+
+    color: var(--secondary-color);
+
+    font-size: 1.2rem;
+
+    font-weight: bold;
+
+    padding: 12px;
+}
+
+
+thead {
+    background-color: var(--secondary-color);
+
+    color: white;
+}
+
+
+th,
+td {
+    border: 1px solid var(--border-color);
+
+    padding: 12px 15px;
+
+    text-align: left;
+
+    vertical-align: middle;
+}
+
+
+th {
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+
+tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+
+tbody tr:hover {
+    background-color: #dbeafe;
+
+    transition: background-color var(--transition);
+}
+
+
+tfoot {
+    background-color: #e0f2fe;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   19. FORM
+   ========================================================= */
+
+form {
+    width: 100%;
+
+    max-width: 800px;
+
+    margin: 0 auto;
+}
+
+
+fieldset {
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--medium-radius);
+
+    padding: 20px;
+
+    margin-bottom: 25px;
+
+    background-color: #f8fafc;
+}
+
+
+legend {
+    background-color: var(--primary-color);
+
+    color: white;
+
+    padding: 6px 15px;
+
+    border-radius: var(--small-radius);
+
+    font-weight: bold;
+}
+
+
+label {
+    display: inline-block;
+
+    color: var(--text-color);
+
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   20. INPUTS
+   ========================================================= */
+
+input,
+textarea,
+select {
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    color: var(--text-color);
+
+    background-color: white;
+
+    border: 1px solid #9ca3af;
+
+    border-radius: var(--small-radius);
+
+    padding: 10px 12px;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background-color var(--transition);
+}
+
+
+input:not(
+    [type="radio"],
+    [type="checkbox"],
+    [type="range"],
+    [type="color"],
+    [type="file"],
+    [type="submit"],
+    [type="reset"],
+    [type="button"]
+),
+textarea,
+select {
+    width: 100%;
+
+    max-width: 600px;
+}
+
+
+/* Input focus */
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+
+    border-color: var(--primary-color);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+
+/* Placeholder */
+
+::placeholder {
+    color: #9ca3af;
+
+    opacity: 1;
+}
+
+
+/* Disabled */
+
+input:disabled,
+textarea:disabled,
+select:disabled,
+button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   21. CHECKBOXES AND RADIO BUTTONS
+   ========================================================= */
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+
+    margin-right: 6px;
+
+    accent-color: var(--primary-color);
+
+    cursor: pointer;
+}
+
+
+input[type="radio"] + *,
+input[type="checkbox"] + * {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   22. RANGE
+   ========================================================= */
+
+input[type="range"] {
+    width: 100%;
+
+    max-width: 500px;
+
+    accent-color: var(--primary-color);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   23. COLOR INPUT
+   ========================================================= */
+
+input[type="color"] {
+    width: 70px;
+
+    height: 45px;
+
+    padding: 3px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   24. FILE INPUT
+   ========================================================= */
+
+input[type="file"] {
+    width: 100%;
+
+    max-width: 600px;
+
+    cursor: pointer;
+}
+
+
+input[type="file"]::file-selector-button {
+    background-color: var(--primary-color);
+
+    color: white;
+
+    border: none;
+
+    padding: 8px 12px;
+
+    margin-right: 10px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+
+input[type="file"]::file-selector-button:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* =========================================================
+   25. SELECT
+   ========================================================= */
+
+select {
+    cursor: pointer;
+
+    min-height: 42px;
+}
+
+
+select[multiple] {
+    min-height: 120px;
+}
+
+
+/* =========================================================
+   26. TEXTAREA
+   ========================================================= */
+
+textarea {
+    resize: vertical;
+
+    min-height: 120px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   27. BUTTONS
+   ========================================================= */
+
+button {
+    background-color: var(--primary-color);
+
+    color: white;
+
+    border: 2px solid var(--primary-color);
+
+    border-radius: var(--small-radius);
+
+    padding: 10px 20px;
+
+    margin: 5px;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition),
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+button:hover {
+    background-color: var(--secondary-color);
+
+    border-color: var(--secondary-color);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+button:active {
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+
+button:focus {
+    outline: 3px solid #93c5fd;
+
+    outline-offset: 2px;
+}
+
+
+/* Reset button */
+
+button[type="reset"] {
+    background-color: var(--danger-color);
+
+    border-color: var(--danger-color);
+}
+
+
+button[type="reset"]:hover {
+    background-color: #991b1b;
+
+    border-color: #991b1b;
+}
+
+
+/* Normal button */
+
+button[type="button"] {
+    background-color: var(--success-color);
+
+    border-color: var(--success-color);
+}
+
+
+button[type="button"]:hover {
+    background-color: #15803d;
+
+    border-color: #15803d;
+}
+
+
+/* =========================================================
+   28. AUDIO
+   ========================================================= */
+
+audio {
+    width: 100%;
+
+    max-width: 600px;
+
+    margin: 20px 0;
+}
+
+
+/* =========================================================
+   29. VIDEO
+   ========================================================= */
+
+video {
+    display: block;
+
+    width: 100%;
+
+    max-width: 700px;
+
+    height: auto;
+
+    margin: 20px auto;
+
+    background-color: black;
+
+    border-radius: var(--medium-radius);
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   30. IFRAME
+   ========================================================= */
+
+iframe {
+    display: block;
+
+    width: 100%;
+
+    min-height: 300px;
+
+    border: 2px solid var(--border-color);
+
+    border-radius: var(--medium-radius);
+
+    margin: 20px auto;
+
+    background-color: white;
+}
+
+
+/* =========================================================
+   31. ARTICLE
+   ========================================================= */
+
+article {
+    background-color: #eff6ff;
+
+    padding: 20px;
+
+    margin: 20px 0;
+
+    border-left: 5px solid var(--primary-color);
+
+    border-radius: var(--small-radius);
+}
+
+
+article h3 {
+    color: var(--secondary-color);
+}
+
+
+/* =========================================================
+   32. ASIDE
+   ========================================================= */
+
+aside {
+    background-color: #fff7ed;
+
+    padding: 20px;
+
+    margin: 20px 0;
+
+    border-left: 5px solid var(--accent-color);
+
+    border-radius: var(--small-radius);
+}
+
+
+aside h3 {
+    color: #c2410c;
+}
+
+
+/* =========================================================
+   33. DETAILS / SUMMARY
+   ========================================================= */
+
+details {
+    background-color: #f8fafc;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--small-radius);
+
+    padding: 15px 20px;
+
+    margin: 15px 0;
+
+    transition:
+        background-color var(--transition);
+}
+
+
+details:hover {
+    background-color: #eff6ff;
+}
+
+
+summary {
+    color: var(--secondary-color);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+
+details[open] {
+    border-color: var(--primary-color);
+
+    background-color: #eff6ff;
+}
+
+
+/* =========================================================
+   34. PROGRESS
+   ========================================================= */
+
+progress {
+    width: 100%;
+
+    max-width: 500px;
+
+    height: 20px;
+
+    display: block;
+
+    margin: 10px 0;
+
+    accent-color: var(--primary-color);
+}
+
+
+/* =========================================================
+   35. METER
+   ========================================================= */
+
+meter {
+    width: 100%;
+
+    max-width: 500px;
+
+    height: 25px;
+
+    display: block;
+
+    margin: 10px 0;
+}
+
+
+/* =========================================================
+   36. TIME
+   ========================================================= */
+
+time {
+    color: var(--primary-color);
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   37. ADDRESS
+   ========================================================= */
+
+address {
+    background-color: #f8fafc;
+
+    color: var(--muted-color);
+
+    padding: 20px;
+
+    border-left: 4px solid var(--primary-color);
+
+    border-radius: var(--small-radius);
+
+    font-style: normal;
+
+    line-height: 1.8;
+}
+
+
+address a {
+    color: var(--primary-color);
+}
+
+
+/* =========================================================
+   38. DIV AND SPAN
+   ========================================================= */
+
+section > div {
+    margin: 15px 0;
+}
+
+
+span {
+    color: var(--accent-color);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   39. DATA
+   ========================================================= */
+
+data {
+    color: var(--primary-color);
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   40. WORD BREAK
+   ========================================================= */
+
+wbr {
+    display: inline;
+}
+
+
+/* =========================================================
+   41. BDI / BDO
+   ========================================================= */
+
+bdi {
+    background-color: #e0f2fe;
+
+    padding: 3px 7px;
+
+    border-radius: 4px;
+}
+
+
+bdo {
+    color: var(--danger-color);
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   42. SVG
+   ========================================================= */
+
+svg {
+    display: block;
+
+    max-width: 100%;
+
+    height: auto;
+
+    margin: 20px auto;
+
+    border: 1px solid var(--border-color);
+
+    background-color: #f8fafc;
+
+    border-radius: var(--small-radius);
+}
+
+
+/* SVG shapes */
+
+svg circle,
+svg rect {
+    transition:
+        opacity var(--transition),
+        transform var(--transition);
+}
+
+
+svg circle:hover,
+svg rect:hover {
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   43. CANVAS
+   ========================================================= */
+
+canvas {
+    display: block;
+
+    max-width: 100%;
+
+    height: auto;
+
+    margin: 20px auto;
+
+    border: 2px solid var(--border-color);
+
+    border-radius: var(--small-radius);
+
+    background-color: white;
+}
+
+
+/* =========================================================
+   44. TEMPLATE
+   ========================================================= */
+
+template {
+    display: none;
+}
+
+
+/* =========================================================
+   45. NOSCRIPT
+   ========================================================= */
+
+noscript {
+    display: block;
+
+    background-color: #fee2e2;
+
+    color: #991b1b;
+
+    padding: 15px;
+
+    border: 1px solid #fca5a5;
+
+    border-radius: var(--small-radius);
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   46. FOOTER
+   ========================================================= */
+
+footer {
+    background-color: var(--dark-color);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    margin-top: 50px;
+
+    border-top: 5px solid var(--primary-color);
+}
+
+
+footer p {
+    color: #cbd5e1;
+
+    margin-bottom: 5px;
+}
+
+
+footer small {
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   47. SELECTION
+   ========================================================= */
+
+::selection {
+    background-color: var(--primary-color);
+
+    color: white;
+}
+
+
+/* =========================================================
+   48. SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+    background-color: #e5e7eb;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+
+    border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* =========================================================
+   49. FIRST / LAST CHILD
+   ========================================================= */
+
+section p:first-of-type {
+    margin-top: 0;
+}
+
+
+section p:last-of-type {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   50. RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 15px;
+    }
+
+
+    header {
+        min-height: 180px;
+
+        padding: 40px 15px;
+    }
+
+
+    header h1 {
+        font-size: 2rem;
+
+        letter-spacing: 1px;
+    }
+
+
+    nav {
+        position: static;
+
+        padding: 10px;
+
+        gap: 5px;
+    }
+
+
+    nav a {
+        font-size: 14px;
+
+        padding: 7px 10px;
+    }
+
+
+    main {
+        width: 95%;
+
+        padding: 10px 0;
+    }
+
+
+    section {
+        padding: 20px;
+
+        margin-top: 20px;
+
+        margin-bottom: 20px;
+    }
+
+
+    section > h2 {
+        font-size: 1.5rem;
+    }
+
+
+    table {
+        display: block;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+    }
+
+
+    fieldset {
+        padding: 15px;
+    }
+
+
+    iframe {
+        min-height: 250px;
+    }
+}
+
+
+/* =========================================================
+   51. SMALL MOBILE DEVICES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 35px 10px;
+    }
+
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+
+    nav {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    nav a {
+        text-align: center;
+
+        width: 100%;
+    }
+
+
+    main {
+        width: 96%;
+    }
+
+
+    section {
+        padding: 15px;
+    }
+
+
+    button {
+        width: 100%;
+
+        margin: 5px 0;
+    }
+
+
+    input,
+    textarea,
+    select {
+        font-size: 16px;
+    }
+
+
+    figure {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   52. PRINT STYLES
+   ========================================================= */
+
+@media print {
+
+    nav {
+        display: none;
+    }
+
+
+    body {
+        background-color: white;
+
+        color: black;
+    }
+
+
+    section {
+        box-shadow: none;
+
+        border: 1px solid #000;
+
+        break-inside: avoid;
+    }
+
+
+    header,
+    footer {
+        background-color: white;
+
+        color: black;
+
+        border: 1px solid black;
+    }
+
+
+    a {
+        color: black;
+
+        text-decoration: underline;
+    }
+}
