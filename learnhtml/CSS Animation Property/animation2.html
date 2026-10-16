@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iteration-count, animation-direction, animation-fill-mode</title>
+  <style>
+   .box-container{
+     width: 600px;
+     height :600px ;
+     border : 2px solid black ;
+     margin : auto ;
+     position : relative ;
+   }
+   .box{
+     width:200px ;
+     height:200px ;
+     background:red  ;
+     position :absolute ;
+     top:0px ;
+     left:0px ;
+    animation-name:box ;
+    animation-duration : 1s ;
+    /*animation:box 5s*/ /*this is a shorthand property to name and duration in one line */
+    animation-delay:5s ;
+     animation-iteration-count:infinite ;
+     animation-fill-mode:both ;
+     animation-direction : alternate-reverse;
+   }
+   @keyframes box {
+        0%{
+          top:0px ;
+          left:0px ;
+          background:red ;
+        }
+        10%{
+          top:0px ;
+          left:400px ;
+          background:yellow;
+        }
+        50%{
+          top:400px ;
+          left:400px ;
+          background : blue ;
+        }
+        60%{
+          top:400px ;
+          left:0px ;
+          background-color:green ;
+        }
+        100%{
+          top:0px ;
+          left:0px ;
+          background:red;
+        }
+   }
+  
+  </style>
+</head>
+<body>
+  <div class="box-container">
+    <div class="box"></div>
+  </div>
+</body>
+</html>

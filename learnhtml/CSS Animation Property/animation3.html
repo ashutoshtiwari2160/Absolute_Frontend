@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation-timing-function</title>
+  <style>
+    .main{
+      width:700px ;
+      height:150px ;
+      border : 2px black solid ;
+      margin:50px auto   ;
+      position:relative ;
+    }
+    .box{
+      width:200px ;
+      height:100px ;
+      margin-top:20px ;
+      background:red ;
+      animation:box 4s 4 ;
+      position:absolute;
+      animation-timing-function:ease-in-out ;
+       /*
+       linear 
+       ease 
+       ease-in
+       ease-out
+       ease-in-out
+       */
+    }
+    @keyframes box {
+      from{
+        left:0px ;
+      }
+      to{
+        left:500px ;
+      }
+    }
+    </style>
+</head>
+<body>
+  <div class ="main">
+    <div class="box"></div>
+  </div>
+</body>
+</html>

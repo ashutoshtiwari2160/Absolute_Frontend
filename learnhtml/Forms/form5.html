@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>HTML5 FORM ATTRIBUTE</h2>
+ <form><fieldset>
+<legend>Student Information </legend>
+<!--required+placeholder+autofocus-->
+Name:
+<input type="text"
+       name="name"
+       placeholder="Enter your name"
+       autofocus=""
+       required=""
+       /> <br><br>
+<!--required+placeholder-->
+Email:
+<input type="email"
+       name="email"
+       placeholder="Enter your email" 
+       required=""><br><br>
+<!--readonly-->
+Country:
+<input type = "text"
+       name = "country"
+       value = "India"
+       readonly/> <br><br>
+<!--disabled-->
+Username:
+<input type = "text" 
+       name = "username"
+       value="Not Available"
+       disabled>
+<!--checked-->
+Gender:
+<input type = "radio"
+       name="gender"
+       value="male"
+       checked>Male<br><br>
+<input type = "radio"
+       name="gender"
+       value="female"
+        >Female<br><br>
+<!--min+max-->
+Age:
+<input type="number"
+       name="age"
+       min="18"
+       max="60"><br><br>
+<!--maxlength-->
+Password:
+<input type="password"
+       name="password"
+       placeholder="maximum 10 characters"
+       maxlength="10" 
+       required> <br><br>
+<input type="submit" value="SUBMIT">
+<input type="reset" value="RESET">
+
+ </fieldset></form>
+</body>
+</html>
