@@ -5,8 +5,6 @@ class Student {
       string name ;
       int rno ;
       float gpa ;
-      
-
 } ;
 int main (){
     Student s1 ;

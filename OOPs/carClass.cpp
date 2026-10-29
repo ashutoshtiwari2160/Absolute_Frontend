@@ -15,7 +15,7 @@ class Car {
 } ;
 void print(Car c){
   cout<<c.name<<" "<<c.price<<" "<<c.seats<<" "<<c.type<<endl;
- 
+
 }
 void change(Car& c){
   c.name = "Audi AB" ;
