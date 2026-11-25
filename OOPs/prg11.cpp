@@ -17,4 +17,7 @@ int main (){
     
     Cricketer* c2 = new Cricketer("Rohit Sharma",10000,45.8) ;
     cout<<c2->name<<" "<<c2->runs<<endl;
+    cout<<(*c2).name<<" "<<(*c2).runs<<endl;
+    
+    return 0 ;
 }
