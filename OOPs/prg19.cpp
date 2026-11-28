@@ -1,43 +1,25 @@
 #include<bits/stdc++.h>
 using namespace std ;
-class Fraction {
+class Loading {
     public:
-    int num ;
-    int den ;
-    Fraction(int num , int den){
-        this->num = num ;
-        this->den = den ;
+    void sum(string a , string b){
+        cout<<a+b<<endl;
     }
-    void display(){
-        cout<<num<<"/"<<den<<endl;
+    void sum(int a , int b){
+        cout<<a+b<<endl;
     }
-    Fraction operator+(Fraction f){
-        int newNum = this->num*f.den + f.num*this->den ;
-        int newDen = this->den*f.den ;
-        Fraction ans(newNum,newDen) ;
-        return ans ;
+    void sum(int a , int b , int c){
+        cout<<a+b+c<<endl;
     }
-     Fraction operator-(Fraction f){
-        int newNum = this->num*f.den - f.num*this->den ;
-        int newDen = this->den*f.den ;
-        Fraction ans(newNum,newDen) ;
-        return ans ;
-    }
-     Fraction operator*(Fraction f){
-        int newNum = this->num*f.num ;
-        int newDen = this->den*f.den ;
-        Fraction ans(newNum,newDen) ;
-        return ans ;
+    int sum(int a , int b , int c , int d){
+        return a+b+c+d ;
     }
 } ;
 int main (){
-    Fraction f1(1,2);
-    Fraction f2(1,3);
-    f1.display();
-    f2.display();
-    Fraction f3 = f1+f2 ;
-    f3.display() ;
-    Fraction f4 = f1-f2 ;
-    f4.display() ;
-
+    Loading a ;
+    a.sum(5,8);
+    a.sum(4,5,6);
+    a.sum("Ashutosh","Tiwari") ;
+    cout<<a.sum(3,5,8,9);
+    return 0 ;
 }

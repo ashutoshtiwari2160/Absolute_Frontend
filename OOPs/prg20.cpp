@@ -1,28 +1,44 @@
-//overriding.cpp
+//operator_overloading.cpp
 #include<bits/stdc++.h>
 using namespace std ;
-class Scooty {
-public:
-int topSpeed ;
-float mileage ;
-void sound(){
-    cout<<"vroom vrom"<<endl;
-}
-};
-class Bike:public Scooty{
+class Fraction {
     public:
-    int gears ;
-    void sound(){
-        cout<<"Dhroom Dhroom"<<endl;
+    int num ;
+    int den ;
+    Fraction(int num , int den){
+        this->num = num ;
+        this->den = den ;
+    }
+    void display(){
+        cout<<num<<"/"<<den<<endl;
+    }
+    Fraction operator+(Fraction f){
+        int newNum = this->num*f.den + f.num*this->den ;
+        int newDen = this->den*f.den ;
+        Fraction ans(newNum,newDen) ;
+        return ans ;
+    }
+     Fraction operator-(Fraction f){
+        int newNum = this->num*f.den - f.num*this->den ;
+        int newDen = this->den*f.den ;
+        Fraction ans(newNum,newDen) ;
+        return ans ;
+    }
+     Fraction operator*(Fraction f){
+        int newNum = this->num*f.num ;
+        int newDen = this->den*f.den ;
+        Fraction ans(newNum,newDen) ;
+        return ans ;
     }
 } ;
 int main (){
-    Bike b ;
-    b.sound();
-    Bike* bc = new Bike() ;
-    bc->gears =  6 ;
-    cout<<bc->gears<<endl;
-    Scooty s ;
-    s.sound() ;
-    return 0 ;
+    Fraction f1(1,2);
+    Fraction f2(1,3);
+    f1.display();
+    f2.display();
+    Fraction f3 = f1+f2 ;
+    f3.display() ;
+    Fraction f4 = f1-f2 ;
+    f4.display() ;
+
 }
